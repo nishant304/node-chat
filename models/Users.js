@@ -16,6 +16,10 @@ var User = new Schema({
 		required : true,
 		type: String,
 		unique :true
+	},
+	mobile : {
+		type: String,
+		default : '12345'
 	}
 });
 
