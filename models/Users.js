@@ -17,11 +17,13 @@ var User = new Schema({
 		type: String,
 		unique :true
 	},
-	mobile : {
+	password : {
 		type: String,
 		default : '12345'
-	}
+	},
+	contacts : [ {type: mongoose.Schema.Types.ObjectId, ref: 'User'}] 
 });
+
 
 var Users = mongoose.model('User',User);
 

@@ -6,3 +6,7 @@ exports.getToken = function (user) {
         expiresIn: 3600
     });
 };
+
+exports.verifyToken = function (token) {
+    return jwt.decode(token);
+};
