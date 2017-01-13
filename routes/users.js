@@ -7,7 +7,7 @@ var router = express.Router();
 var db = mongoose.connection;
 
 router.post('/register',function(req,res,next){
-	console.log(req);
+	console.log(req.body);
 	User.create(req.body,function(err,User){
 		if(err){
 			console.log(err);
@@ -28,7 +28,8 @@ router.post('/register',function(req,res,next){
 
 
 router.post('/login',function(req,res,next){
-
+   
+    console.log(req.body);
 	User.findOne({mobile:req.body.mobile,password:req.body.password},function(err,use){
 		if(err){
 			var err = new Error('User not found');
